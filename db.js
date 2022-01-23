@@ -1,6 +1,7 @@
 const mongoose=require('mongoose');
 
-console.log(process.env.mongodb_url)
+require('dotenv').config()
+// console.log(process.env.mongodb_url)
 
 
 const ConnectToDataBase=async ()=>{
@@ -22,16 +23,20 @@ const { Schema } = mongoose;
 
 const CategorySchema = new Schema({
     name: String,
-    current_sales_value : String,
-    target_sales_value: String,
+    current_sales_value : Number,
+    target_sales_value: Number,
     level: Number,
     child:[String],
     progress:Number,
     progress_label:String,
-    bar_color:String
+    bar_color:String,
+    parent:String,
 },{ versionKey: false,timestamps: true });
 
 
+const CategoryModal = mongoose.model('tree', CategorySchema);
+
 
 exports.CategorySchema=CategorySchema;
+exports.CategoryModal=CategoryModal;
 
