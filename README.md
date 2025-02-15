@@ -2,10 +2,10 @@
 
 
 ```js
-router.post('/add',AddNewCategory);
-router.get('/all',GetAll);
-router.get('/level_info/:level',GetLevelCategoryInfo);
-router.get('/parent/:id',GetAllParentId);
+router.post('/category/add',AddNewCategory);
+router.get('/category/all',GetAll);
+router.get('/category/level_info/:level',GetLevelCategoryInfo);
+router.get('/category/parent/:id',GetAllParentId);
 ```
 
 
